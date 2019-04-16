@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule api/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/?$ api/routes.php?uri=$1&id=$2 [QSA,NC,L]
+RewriteRule api/([a-zA-Z0-9_-]+)/?$ api/routes.php?uri=$1 [QSA,NC,L]
+</IfModule>
